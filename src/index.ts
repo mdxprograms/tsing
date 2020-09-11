@@ -64,7 +64,9 @@ let schools: Schools = [
 ]
 
 // Validate school info properties
-const errorCollection = () => schools.map((school: School): {hasErrors: boolean, errors: string[]} => {
+type ErrorCollection = { hasErrors: boolean, errors: string[] }
+
+const errorCollection = () => schools.map((school: School): ErrorCollection => {
    let errors = []
 
    for (const name in validators) {
